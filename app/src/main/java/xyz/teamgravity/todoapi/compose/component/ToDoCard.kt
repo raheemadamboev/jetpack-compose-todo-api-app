@@ -43,8 +43,7 @@ fun ToDoCard(
                     .fillMaxSize()
                     .align(CenterVertically),
                 onCheckedChange = null,
-                colors = CheckboxDefaults.colors(checkedColor = MaterialTheme.colors.primary),
-                enabled = false
+                colors = CheckboxDefaults.colors(checkedColor = MaterialTheme.colors.primary)
             )
         }
     }
