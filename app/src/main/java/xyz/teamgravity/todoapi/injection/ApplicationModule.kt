@@ -8,6 +8,8 @@ import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import xyz.teamgravity.todoapi.arch.api.ToDoApi
+import xyz.teamgravity.todoapi.arch.repository.MainRepository
+import xyz.teamgravity.todoapi.arch.repository.MainRepositoryImpl
 import javax.inject.Singleton
 
 @Module
@@ -21,4 +23,8 @@ object ApplicationModule {
         .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
         .build()
         .create(ToDoApi::class.java)
+
+    @Singleton
+    @Provides
+    fun provideMainRepository(api: ToDoApi): MainRepository = MainRepositoryImpl(api)
 }
