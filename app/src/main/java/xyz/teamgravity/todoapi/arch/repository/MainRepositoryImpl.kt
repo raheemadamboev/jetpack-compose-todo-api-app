@@ -8,5 +8,5 @@ class MainRepositoryImpl(
     private val api: ToDoApi
 ): MainRepository {
 
-    override suspend fun getToDos(): Response<List<ToDoModel>> = api.retrieveToDos()
+    override suspend fun getToDos(): List<ToDoModel> = api.retrieveToDos()
 }

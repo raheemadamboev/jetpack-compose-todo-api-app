@@ -5,5 +5,5 @@ import xyz.teamgravity.todoapi.model.ToDoModel
 
 interface MainRepository {
 
-    suspend fun getToDos(): Response<List<ToDoModel>>
+    suspend fun getToDos(): List<ToDoModel>
 }

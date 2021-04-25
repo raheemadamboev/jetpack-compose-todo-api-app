@@ -11,5 +11,5 @@ interface ToDoApi {
     }
 
     @GET("/todos")
-    suspend fun retrieveToDos(): Response<List<ToDoModel>>
+    suspend fun retrieveToDos(): List<ToDoModel>
 }
