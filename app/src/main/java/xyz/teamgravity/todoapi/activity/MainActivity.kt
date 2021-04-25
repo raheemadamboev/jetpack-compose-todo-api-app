@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.ui.Modifier
 import dagger.hilt.android.AndroidEntryPoint
 import xyz.teamgravity.todoapi.arch.viewmodel.MainViewModel
@@ -32,7 +32,10 @@ class MainActivity : AppCompatActivity() {
             AppTheme {
                 Box(modifier = Modifier.fillMaxSize()) {
                     LazyColumn {
-                        items(todos) { todo ->
+                        itemsIndexed(todos) { index, todo ->
+                            if (index == 0) {
+                                println("raheem: $index, ${todo.completed}")
+                            }
                             ToDoCard(
                                 task = todo.title,
                                 isChecked = todo.completed

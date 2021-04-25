@@ -14,5 +14,5 @@ data class ToDoModel(
     val title: String = "",
 
     @SerializedName("completed")
-    val completed: Boolean = false
+    var completed: Boolean = false
 )
